@@ -1,17 +1,21 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
-class Background extends React.Component {
-    render() {
-        return (
-            <div>
-                <h2>First, select a background image then click 'next':</h2>
-                <button onclick = 'next' > Next</button>
 
-            </div>
-
-        )
-
-    }
-
-}
-export default Background;
+function Background() {
+    let history = useHistory();
+    function handleClick() {
+      history.push("/Text");
+  
+    }  
+    return (
+      <>
+        <h1>First, select a background image then click 'next'.</h1>
+        <button type ="button" onClick = {handleClick}> 
+        Next
+        </button>
+      </>
+    );
+    
+  }
+  export default Background;

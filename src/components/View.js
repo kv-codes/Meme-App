@@ -1,16 +1,21 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
-class View extends React.Component {
-    render() {
-        return (
-            <div>
-                <h2>Here's your meme!</h2>
+function View() {
+    let history = useHistory();
+    function handleClick() {
+      history.push("/");
+  
+    }  
+    return (
+      <>
+        <h1>Here's your meme!</h1>
+        <button type ="button" onClick = {handleClick}> 
+        Redo
+        </button>
+      </>
+    );
+    
+  }
+  export default View;
 
-                <button onclick = 'redo' >Redo </button>
-
-            </div>
-
-        )
-    }
-}
-export default View;
